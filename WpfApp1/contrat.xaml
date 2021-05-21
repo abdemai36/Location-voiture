@@ -1,0 +1,86 @@
+﻿<Page
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="WpfApp1.contrat"
+      mc:Ignorable="d" 
+      d:DesignHeight="723" d:DesignWidth="1189"
+      Title="contrat" Background="White" Loaded="Page_Loaded">
+
+    <Grid x:Name="imprimer">
+        <DataGrid x:Name="dgv_contrat" HorizontalAlignment="Left" Height="358" Margin="45,333,0,0" VerticalAlignment="Top" Width="1084" AlternationCount="1" AlternatingRowBackground="#FFE0E0E0" BorderBrush="LightGray" BorderThickness="1" SelectionChanged="dgv_contrat_SelectionChanged"/>
+        <Label Content="ID contrat" HorizontalAlignment="Left" Margin="45,59,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Nom client :" HorizontalAlignment="Left" Margin="402,60,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Voiture" HorizontalAlignment="Left" Margin="402,117,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Date  debut :" HorizontalAlignment="Left" Margin="45,117,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Date fin :" HorizontalAlignment="Left" Margin="45,176,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txt_idContrat" x:FieldModifier="public" HorizontalAlignment="Left" Height="26" Margin="174,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" FontSize="16" IsEnabled="False"/>
+        <DatePicker x:Name="dtp_debut" HorizontalAlignment="Left" Margin="174,117,0,0" VerticalAlignment="Top" Height="26" FontSize="16" Width="187" TabIndex="0"/>
+        <DatePicker x:Name="dtp_fin" HorizontalAlignment="Left" Margin="174,176,0,0" VerticalAlignment="Top" Height="26" FontSize="16"  Width="187" CalendarClosed="dtp_fin_CalendarClosed" TabIndex="1"/>
+        <ComboBox x:Name="cmb_nom_client" HorizontalAlignment="Left" Margin="536,59,0,0" VerticalAlignment="Top" Width="183" FontSize="16" TabIndex="2" />
+        <TextBox x:Name="txt_rechercher" HorizontalAlignment="Left" Height="29" Margin="963,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161" BorderThickness="0,0,0,2" FontSize="16" GotFocus="txt_rechercher_GotFocus" LostFocus="txt_rechercher_LostFocus" TextChanged="txt_rechercher_TextChanged"/>
+        <Label Content="Montant" HorizontalAlignment="Left" Margin="392,167,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txt_Montant" HorizontalAlignment="Left" Height="26" Margin="542,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" FontSize="16" TabIndex="4" />
+        <Label Content="Nombres de jours :" HorizontalAlignment="Left" Margin="760,59,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txt_nbr_jours" HorizontalAlignment="Left" Height="26" Margin="959,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" FontSize="16" TabIndex="6" IsEnabled="False"/>
+        <Label Content="Paiment" HorizontalAlignment="Left" Margin="760,121,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txt_Paiment" HorizontalAlignment="Left" Height="26" Margin="959,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" FontSize="16" LostFocus="txt_Paiment_LostFocus" TabIndex="7"/>
+        <Label Content="Methode de paiement :" HorizontalAlignment="Left" Margin="770,221,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <ComboBox x:Name="cmb_methode_paiement" HorizontalAlignment="Left" Margin="970,217,0,0" VerticalAlignment="Top" Width="166" FontSize="16" TabIndex="9"/>
+        <Button x:Name="btn_Ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="45,282,0,0" VerticalAlignment="Top" Width="100" BorderThickness="0"  Background="#FF5AE845" Height="35" Click="btn_Ajouter_Click"/>
+        <Button x:Name="btn_modifier" Content="Modiffier" HorizontalAlignment="Left" Margin="170,282,0,0" VerticalAlignment="Top" Width="100" BorderThickness="0"  Background="#FF4559E8" Height="35" Click="btn_modifier_Click"/>
+        <Button x:Name="btn_supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="293,282,0,0" VerticalAlignment="Top" Width="100" BorderThickness="0"  Background="#E84545" Height="35" Click="btn_supprimer_Click"/>
+        <Button x:Name="btn_improssion" Content="Imprimer" HorizontalAlignment="Left" Margin="419,282,0,0" VerticalAlignment="Top" Width="100" BorderThickness="0"  Background="#FFE86E45" Height="35" Click="btn_improssion_Click"/>
+        <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="182" Margin="387,42,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5" StrokeThickness="0">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="182" Margin="749,39,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5" StrokeThickness="0">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button x:Name="btn_resrvation" Content="Reservation" HorizontalAlignment="Left" Margin="542,281,0,0" VerticalAlignment="Top" Width="110" BorderThickness="0"  Background="#FF2064F5" Height="35" Click="btn_resrvation_Click"/>
+        <Label Content="Reste :" HorizontalAlignment="Left" Margin="770,166,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txt_rest" HorizontalAlignment="Left" Height="26" Margin="970,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="16" TabIndex="8" IsEnabled="False"/>
+        <Label Content="Prix par jour" HorizontalAlignment="Left" Margin="382,216,0,0" VerticalAlignment="Top" FontSize="18" Width="151"/>
+        <TextBox x:Name="txt_prix_parJour" HorizontalAlignment="Left" Height="26" Margin="552,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" FontSize="16" RenderTransformOrigin="0.235,0.808" TabIndex="5" />
+
+
+        <materialDesign:DialogHost x:Name="MsgPopup" CloseOnClickAway="True" Margin="0,-1,-5,2" >
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Margin="20" Width="300" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Image x:Name="IMGPopup" VerticalAlignment="Top" HorizontalAlignment="Center" Width="24" Height="24"/>
+
+                    <TextBlock x:Name="txtPopup" Text="My first Dialog" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+        <Label x:Name="Label1" Content="*" HorizontalAlignment="Left" Margin="367,113,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label2" Content="*" HorizontalAlignment="Left" Margin="364,174,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label3" Content="*" HorizontalAlignment="Left" Margin="724,62,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label4" Content="*" HorizontalAlignment="Left" Margin="725,115,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label5" Content="*" HorizontalAlignment="Left" Margin="723,169,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label6" Content="*" HorizontalAlignment="Left" Margin="724,222,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label7" Content="*" HorizontalAlignment="Left" Margin="1130,58,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label8" Content="*" HorizontalAlignment="Left" Margin="1134,118,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label9" Content="*" HorizontalAlignment="Left" Margin="1140,165,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="Label10" Content="*" HorizontalAlignment="Left" Margin="1141,218,0,0" VerticalAlignment="Top" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold"/>
+        <ComboBox x:Name="cmb_nom_voiture" HorizontalAlignment="Left" Margin="536,114,0,0" VerticalAlignment="Top" Width="183" FontSize="16" TabIndex="2" DropDownClosed="cmb_nom_voiture_DropDownClosed" />
+        <Button x:Name="btn_recharger" Content="..." HorizontalAlignment="Left" Margin="800,283,0,0" VerticalAlignment="Top" Width="46" Click="Button_Click" Height="28"/>
+        <Button x:Name="btn_nouveau" Content="Nouveau" HorizontalAlignment="Left" Margin="675,280,0,0" VerticalAlignment="Top" Width="100" BorderThickness="0"  Background="#FFDFF311" Height="35" Click="btn_nouveau_Click" />
+    </Grid>
+</Page>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800" WindowStyle="None" AllowsTransparency="True" Background="White" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
+                <GradientStop Color="#E84545 " Offset="1" />
+                <GradientStop Color="#363740" Offset="0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border Height="450" VerticalAlignment="Top" CornerRadius="0 0 180 0" Background="White">
+            <Image Margin="-26,-38,342,-24.4" Source="Assets/location (1).png" Stretch="Fill"/>
+        </Border>
+        <TextBox x:Name="txt_user_name" HorizontalAlignment="Left" Height="32" Margin="436,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="240" VerticalContentAlignment="Center" FontSize="16" BorderThickness="0,0,0,2"  TabIndex="0" TextChanged="txt_user_name_TextChanged" />
+        <Button Content="Se connecter" HorizontalAlignment="Left" Margin="408,331,0,0" VerticalAlignment="Top" Width="271" Height="33" Foreground="White" Background="#E84545" FontSize="18" BorderThickness="0" Click="Button_Click" Cursor="Hand" TabIndex="2">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5" Direction="-100" ShadowDepth="3"/>
+            </Button.Effect>
+        </Button>
+        <Label Content="Auto" HorizontalAlignment="Left" Margin="409,85,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="Vermietung" HorizontalAlignment="Left" Margin="495,85,0,0" VerticalAlignment="Top" FontSize="36" Foreground="#E84545" Width="196"/>
+        <Image Margin="405,187,369,286" Source="Assets/user.png" Stretch="Fill"/>
+        <Image Margin="405,255,367,218" Source="Assets/padlock.png" Stretch="Fill"/>
+        <Button HorizontalAlignment="Left" Margin="727,10,0,0" VerticalAlignment="Top" Width="63" Click="Button_Click_1" Background="Transparent" BorderThickness="0" Height="46">
+            <Image Source="Assets/close.png" Stretch="Fill" Height="30" Width="30"/>
+
+        </Button>
+        <Label Content="*Nom ou bien mot de passe incorrect"  Name="label_Check" HorizontalAlignment="Left" Margin="405,287,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.657,1.284" Background="White" Foreground="#FFFF0404"/>
+        <PasswordBox x:Name="txt_password"  HorizontalAlignment="Left" Margin="438,255,0,0" VerticalAlignment="Top" Width="238" BorderThickness="0,0,0,2" TabIndex="1"/>
+
+
+
+
+    </Grid>
+
+</Window>

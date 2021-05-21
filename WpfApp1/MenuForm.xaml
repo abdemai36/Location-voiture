@@ -1,0 +1,102 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Name="AM_ME" x:Class="WpfApp1.Window1"
+        mc:Ignorable="d"
+        Title="AUTOVERMIETUNG" Height="800" Width="1400" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="529*"/>
+        </Grid.ColumnDefinitions>
+
+        <materialDesign:DialogHost x:Name="eror" BorderBrush="{DynamicResource MaterialDesignDivider}">
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Width="200" Height="170" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Margin="15">
+                        <materialDesign:PackIcon Kind="User" Foreground="LightGray" Width="50" Height="50"/>
+                        <TextBlock Foreground="Gray" Width="200" Margin="15 5" TextWrapping="Wrap">
+                            Cet onglet est juste pour les admins
+                        </TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15">
+                        <Button Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Style="{DynamicResource MaterialDesignFlatButton}" Margin="4" VerticalAlignment="Center" Background="#E84545" Content="Compris" Foreground="White">
+
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+            <Grid>
+
+                <Menu HorizontalAlignment="Left" Height="587" VerticalAlignment="Top" Width="200" Background="#363740" Margin="0,127,0,0" ScrollViewer.CanContentScroll="True">
+
+                    <MenuItem Height="47" Width="226" Header="Statistique" Foreground="White" Click="MenuItem_Click_1" FontSize="16">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/pie-graph.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Height="47" Width="268" Header="Créer contrat" Foreground="White" FontSize="16" Click="MenuItem_Click">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/contract.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Height="47" Width="258" Header="Reservation" Foreground="White" FontSize="16" Click="MenuItem_Click_2">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/calendar (1).png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Height="47" Width="371" Header="Gestion de voiture" Foreground="White" FontSize="16" Click="MenuItem_Click_5">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/car.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Height="47" Width="333" Header="Gestion de clients" Foreground="White" FontSize="16" Click="MenuItem_Click_4">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/customer (1).png"/>
+
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Height="47" Width="343" Header="Gestion de compte" Foreground="White" FontSize="16" Click="MenuItem_Click_3">
+                        <MenuItem.Icon>
+                            <Image Source="Assets/account.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                </Menu>
+            </Grid>
+        </materialDesign:DialogHost>
+        <Frame x:Name="parent"  HorizontalAlignment="Left" Height="723"  Margin="5,47,-4,-1" VerticalAlignment="Top" Width="1191" Grid.Column="1"  NavigationUIVisibility="Hidden" Grid.ColumnSpan="2"/>
+        <Image x:Name="logo" Height="648" VerticalAlignment="Top" Margin="19,50,-2,0" Source="Assets/location (1).png" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="200" Fill="#363740" />
+        <Label Content="Auto" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" FontSize="22" Foreground="White" Height="40" Width="58"/>
+        <Label Content="Vermietung" HorizontalAlignment="Left" Margin="68,32,0,0" VerticalAlignment="Top" FontSize="22" Foreground="#E84545" Height="40" Width="123"/>
+        <Button Content="Se déconnecter" HorizontalAlignment="Center" Margin="0,713,0,-3" VerticalAlignment="Top" Width="200" Height="59" Background="#363740" Foreground="White" FontSize="20" BorderThickness="0" Click="Button_Click" Padding="0" >
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <Trigger Property="UIElement.IsMouseOver" Value="True">
+                            <Setter Property="Control.Background" Value="Red" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="username" Content="                " Grid.Column="2" HorizontalAlignment="Left" Margin="863,0,0,0" VerticalAlignment="Top" FontSize="20" Width="177"/>
+        <Label x:Name="titre" x:FieldModifier="public"  Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="19,10,0,0" VerticalAlignment="Top" FontSize="20" Width="230" Grid.ColumnSpan="2"/>
+
+
+
+
+
+    </Grid>
+
+
+
+</Window>

@@ -1,0 +1,130 @@
+﻿<Page x:Class="WpfApp1.client"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="client" Background="White" Height="723" Width="1189" Loaded="Page_Loaded">
+
+    <Grid Margin="1,1,-1,-1">
+        <Label Content="ID client :" HorizontalAlignment="Left" Margin="31,40,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Nom client :" HorizontalAlignment="Left" Margin="31,90,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Prenom client :" HorizontalAlignment="Left" Margin="31,150,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Adresse client :" HorizontalAlignment="Left" Margin="31,210,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Date naissance :" HorizontalAlignment="Left" Margin="420,40,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Num permis :" HorizontalAlignment="Left" Margin="420,90,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Date Transaction :" HorizontalAlignment="Left" Margin="808,150,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Date validité :" HorizontalAlignment="Left" Margin="420,150,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Telephone :" HorizontalAlignment="Left" Margin="420,208,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Piece identité :" HorizontalAlignment="Left" Margin="808,40,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <Label Content="Num identité :" HorizontalAlignment="Left" Margin="808,90,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txt_id" HorizontalAlignment="Left" Height="22" Margin="170,40,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" IsReadOnly="True" IsEnabled="False" FontSize="14" FontWeight="Bold" Padding="0,0,0,4"/>
+        <TextBox x:Name="txt_nom" HorizontalAlignment="Left" Height="22" Margin="170,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" TabIndex="0" TextChanged="txt_nom_TextChanged" Padding="0,0,0,4" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txt_prenom" HorizontalAlignment="Left" Height="22" Margin="170,150,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" TabIndex="1" Padding="0,0,0,4" TextChanged="txt_prenom_TextChanged" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txt_adresse" HorizontalAlignment="Left" Height="22" Margin="170,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" TabIndex="2" Padding="0,0,0,4" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txt_num_permis" HorizontalAlignment="Left" Height="22" Margin="557,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" TabIndex="4" Padding="0,0,0,4" TextChanged="txt_num_permis_TextChanged" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txt_telephone" HorizontalAlignment="Left" Height="22" Margin="558,208,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" TabIndex="6" Padding="0,0,0,4" FontSize="14" FontWeight="Bold"/>
+        <TextBox x:Name="txt_num_ident" HorizontalAlignment="Left" Height="22" Margin="948,90,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="192" TabIndex="8" Padding="0,0,0,4" FontSize="14" FontWeight="Bold"/>
+        <DataGrid x:Name="dgv_clients" HorizontalAlignment="Left" Height="343" Margin="32,340,0,0" VerticalAlignment="Top" Width="1119" AlternationCount="1" AlternatingRowBackground="#FFE0E0E0" BorderBrush="LightGray" SelectionChanged="grv_clients_SelectionChanged" IsReadOnly="True"/>
+        <Button x:Name="btn_Ajouter" Content="Ajouter" HorizontalAlignment="Left" Margin="33,286,0,0" VerticalAlignment="Top" Width="106" Height="34" Background="#FF5AE845" Foreground="White" BorderThickness="0" Click="btn_Ajouter_Click" TabIndex="10">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="1" Direction="-100" Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btn_Supprimer" Content="Supprimer" HorizontalAlignment="Left" Margin="170,286,0,0" VerticalAlignment="Top" Width="106" Height="34" Background="#FFE84545" Foreground="White" BorderThickness="0" TabIndex="11" Click="btn_Supprimer_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="1" Direction="-100" Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="btn_Modifier" Content="Modifier" HorizontalAlignment="Left" Margin="307,286,0,0" VerticalAlignment="Top" Width="106" Height="34" Background="#FF4559E8" Foreground="White" BorderThickness="0" TabIndex="12" Click="btn_Modifier_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="1" Direction="-100" Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="txt_rechercher" HorizontalAlignment="Left" Height="23" Margin="931,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" TabIndex="14" TextChanged="txt_rechercher_TextChanged" GotFocus="txt_rechercher_GotFocus" LostFocus="txt_rechercher_LostFocus"/>
+        <ComboBox x:Name="cmb_piece" HorizontalAlignment="Left" Margin="948,40,0,0" VerticalAlignment="Top" Width="192" IsReadOnly="True" TabIndex="7" Padding="0,0,0,4" Height="22" FontSize="14" FontWeight="Bold"/>
+        <DatePicker x:Name="TMQ_naissance" HorizontalAlignment="Left" Margin="557,40,0,0" VerticalAlignment="Top" Width="192" TabIndex="3" Padding="0,0,0,4" Height="22" FontSize="14" FontWeight="Bold"/>
+        <DatePicker x:Name="TMQ_transaction" HorizontalAlignment="Left" Margin="948,150,0,0" VerticalAlignment="Top" Width="192" TabIndex="9" Padding="0,0,0,4" Height="22" FontSize="14" FontWeight="Bold"/>
+        <DatePicker x:Name="TMQ_validite" HorizontalAlignment="Left" Margin="557,150,0,0" VerticalAlignment="Top" Width="192" TabIndex="5" Padding="0,0,0,4" Height="22" FontSize="14" FontWeight="Bold"/>
+        <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="212" Margin="392,40,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5" StrokeThickness="0">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+        <Rectangle Fill="DarkGray" HorizontalAlignment="Left" Height="212" Margin="785,43,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" RenderTransformOrigin="0.5,0.5" StrokeThickness="0">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleX="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Button x:Name="btn_Nouveau" Content="Nouveau" HorizontalAlignment="Left" Margin="439,286,0,0" VerticalAlignment="Top" Width="106" Height="34" Background="#FFE89645" Foreground="White" BorderThickness="0" TabIndex="13" Click="btn_Nouveau_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+            <Button.Effect>
+                <DropShadowEffect ShadowDepth="1" Direction="-100" Opacity="0.7"/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="label1" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="362,82,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label2" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="363,142,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label3" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="363,202,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label4" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="750,32,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label5" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="750,82,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label6" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="750,142,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label7" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="750,200,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label8" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1141,32,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label9" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1141,82,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label10" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1140,142,0,0" Background="White" Foreground="#DDFF0000" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.467,0.414"/>
+        <Label x:Name="label11" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,112,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label12" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,172,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label13" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="170,232,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label14" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="557,62,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label15" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="557,112,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label16" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="558,172,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label17" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="558,230,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label18" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,63,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label19" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="950,112,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+        <Label x:Name="label20" Content="*" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="949,172,0,0" Background="White" Foreground="#DDFF0000" RenderTransformOrigin="0.467,0.414" FontWeight="Bold" FontSize="14"/>
+
+        <materialDesign:DialogHost x:Name="MsgPopup" CloseOnClickAway="True" Margin="2,2,-7,-1" >
+            <materialDesign:DialogHost.DialogContent>
+                <Grid Margin="20" Width="400" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                    <Image x:Name="IMGPopup" VerticalAlignment="Top" HorizontalAlignment="Center" Width="24" Height="24"/>
+
+                    <TextBlock x:Name="txtPopup" Text="My first Dialog" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </materialDesign:DialogHost.DialogContent>
+        </materialDesign:DialogHost>
+
+    </Grid>
+    
+</Page>
